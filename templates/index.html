@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+
+<body>
+
+<img src=
+"https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/news14109.jpg"
+         alt="zomato image", width="200", height="150", style="float:centre">
+
+<img src=
+https://totaldatascience.com/wp-content/uploads/2019/10/TOTAL-1.png"
+         alt="zomato image", width="200", height="70", style="float:right">
+
+
+
+<style>
+body {
+  background-image: url("https://images.pexels.com/photos/952356/pexels-photo-952356.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-position: 100%;
+  background-size: cover;
+}
+</style>
+
+
+
+
+<html>
+<body>
+    <h3>Predict Zomato Restaurant Ratings</h3>
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+         <label for="votes">votes </label>
+    <input type="int" id="votes" name="votes">btw:[1-9999]
+    <br>
+     <label for="cost">Hours per Week </label>
+    <input type="int" id="cost" name="cost">btw:[1-9999]
+    <br>
+     <label for="Online Order">Online Order</label>
+    <select id="Online Order" name="Online Order">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+       </select>
+    <br>
+    
+     <label for="Book Table">Book Table</label>
+    <select id="Book Table" name="Book Table">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+       </select>
+    <br>
+     <label for="rest_type">rest_type </label>
+    <input type="float" id="rest_type" name="rest_type">btw:[0.0-5.0]
+    <br>
+    
+     <label for="location">location </label>
+    <input type="float" id="location" name="location">btw:[0.0-5.0]
+    <br>
+    
+    <label for="cuisines">cuisines </label>
+    <input type="float" id="cuisines" name="cuisines">btw:[0.0-5.0]
+    <br>
+    
+        <label for="dish">dish </label>
+    <input type="float" id="dish" name="dish">btw:[0.0-5.0]
+    <br>
+        
+   
+   <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
